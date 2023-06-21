@@ -43,5 +43,5 @@ Modal.propTypes = {
   modalImg: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   tags: PropTypes.string.isRequired,
-  // handleBackdropClick: PropTypes.func.isRequired,
+  handleBackdropClick: PropTypes.func.isRequired,
 }
