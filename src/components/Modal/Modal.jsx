@@ -7,11 +7,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ closeModal, tags, modalImg }) => {
 
-  const handleBackdropClick = e => {
-    if (e.currentTarget === e.target) {
-      closeModal();
-    }
-  };
+  
 
   useEffect(() => {
     const closeByEsc = e => {
@@ -27,6 +23,13 @@ export const Modal = ({ closeModal, tags, modalImg }) => {
       window.removeEventListener('keydown', closeByEsc);
     };
   }, [closeModal]);
+
+  const handleBackdropClick = e => {
+    if (e.currentTarget === e.target) {
+      closeModal();
+    }
+   
+  };
         
   return createPortal(
     <Overlay onClick={handleBackdropClick}>
@@ -43,5 +46,5 @@ Modal.propTypes = {
   modalImg: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   tags: PropTypes.string.isRequired,
-  handleBackdropClick: PropTypes.func.isRequired,
+  // handleBackdropClick: PropTypes.func.isRequired,
 }
